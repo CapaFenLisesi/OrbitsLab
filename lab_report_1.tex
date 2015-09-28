@@ -50,7 +50,7 @@
 \begin{center}
 \begin{tabular}{l r}
 Date Performed: & September 18, 2015 \\ % Date the experiment was performed
-Partners: & Everybody \\ % Partner names
+Partners: & Whole class \\ % Partner names
 Instructor: & Me % Instructor/supervisor
 \end{tabular}
 \end{center}
@@ -110,30 +110,42 @@ An elliptic orbit is a closed orbit with changing radius r.
 
 \section{Simulation}
 
-\begin{tabular}{ll}
-Mass of empty crucible & \SI{7.28}{\gram}\\
-Mass of crucible and magnesium before heating & \SI{8.59}{\gram}\\
-Mass of crucible and magnesium oxide after heating & \SI{9.46}{\gram}\\
-Balance used & \#4\\
-Magnesium from sample bottle & \#1
-\end{tabular}
+The simulation applies a central acceleration to the orbiting particle.  Outside the boundary of the central mass we have the following acceleration.
 
+$$a=\frac{K}{r^2}$$
+
+Inside the boundary of the central mass ($r<R$) we have the following acceleration.
+
+$$a=\frac{K}{R^3}r$$
+
+Here R is the radius of the central mass and K is a constant determined by the user of the simulation.  K is MG.  For this simulation the radius was set to $R=6$ and the constant was set to $K=-0.1$ making the acceleration attractive.\\
+
+The initial position $\overrightarrow{r}_0$ and initial velocity $\overrightarrow{v}_0$ are set by the user.
+
+\newpage
 %----------------------------------------------------------------------------------------
 %	SECTION 3
 %----------------------------------------------------------------------------------------
 
 \section{Sample Calculation}
+\subsection{Circular Orbit}
+Given $\overrightarrow{r}_0=(10,0)$ and $K=-0.1$ we find the $\overrightarrow{v}_0$ for circular orbit.
+$$F_{net}=ma$$
+$$ \frac{mMG}{r^2} = m \frac{v^2}{r}$$
+$$ \frac{K}{r^2} = \frac{v^2}{r}$$
+$$v=\sqrt{\frac{K}{r}}$$
+$$v=\sqrt{\frac{0.1}{10}}=0.1$$
+The velocity must be tangential and therefore $\overrightarrow{v}_0$ must be perpendicular to $\overrightarrow{r}_0$.
+$$\overrightarrow{v}_0=(0,0.1)$$
 
-\begin{tabular}{ll}
-Mass of magnesium metal & = \SI{8.59}{\gram} - \SI{7.28}{\gram}\\
-& = \SI{1.31}{\gram}\\
-Mass of magnesium oxide & = \SI{9.46}{\gram} - \SI{7.28}{\gram}\\
-& = \SI{2.18}{\gram}\\
-Mass of oxygen & = \SI{2.18}{\gram} - \SI{1.31}{\gram}\\
-& = \SI{0.87}{\gram}
-\end{tabular}
+\subsection{Escape Velocity}
+Given $\overrightarrow{r}_0=(10,0)$ and $K=-0.1$ we find the $\overrightarrow{v}_0$ for escape from the central mass' gravitational attraction.  Escape is associated with a total mechanical energy of zero.
 
-Because of this reaction, the required ratio is the atomic weight of magnesium: \SI{16.00}{\gram} of oxygen as experimental mass of Mg: experimental mass of oxygen or $\frac{x}{1.31}=\frac{16}{0.87}$ from which, $M_{\ce{Mg}} = 16.00 \times \frac{1.31}{0.87} = 24.1 = \SI{24}{\gram\per\mole}$ (to two significant figures).
+$$PE+KE=0$$
+$$-\frac{mMG}{r}+\frac{mv^2}{2}=0 $$
+$$-\frac{K}{r}+\frac{v^2}{2}=0 $$
+$$v_{escape}=\sqrt{\frac{2K}{r}}$$
+$$v_{escape}=\sqrt{\frac{2(0.1)}{10}}=0.14$$
 
 %----------------------------------------------------------------------------------------
 %	SECTION 4
@@ -145,11 +157,24 @@ The atomic weight of magnesium is concluded to be \SI{24}{\gram\per\mol}, as det
 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=0.65\textwidth]{placeholder} % Include the image placeholder.png
-\caption{Figure caption.}
+\includegraphics[width=0.3\textwidth]{circular} % Include the image placeholder.png
+\caption{Circular Orbit}
 \end{center}
 \end{figure}
 
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.3\textwidth]{escape} % Include the image placeholder.png
+\caption{Escape Velocity}
+\end{center}
+\end{figure}
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.3\textwidth]{elliptic} % Include the image placeholder.png
+\caption{Elliptic Orbit}
+\end{center}
+\end{figure}
 %----------------------------------------------------------------------------------------
 %	SECTION 5
 %----------------------------------------------------------------------------------------
